@@ -1,0 +1,66 @@
+nameOverride: go-app
+namespace: go-app
+
+service:
+  port: 80
+  containerPort: 3000
+
+image:
+  repository: <ecr-repo>
+  tag: <image-tag>
+
+env:
+  enabled: false
+  configs: {}
+#   PGHOST: host-name
+#   PGDATABASE: database-name
+#   PGUSER: user
+  secrets: {}
+  #   secretStore: gcp-secret-store
+  #   key: gcp-key_es
+  #   data:
+  #     - name: secret-name
+  #       property: password
+
+replicas: 1
+resources:
+  requests:
+    memory: 250Mi
+    cpu: 200m
+  limits:
+    memory: 500Mi
+    cpu: 500m
+probes: {}
+  # livenessPath: /internal/alive
+  # readinessPath: /internal/ready
+  # liveness:
+  #   initialDelaySeconds: 3
+  #   periodSeconds: 3
+  # readiness:
+  #   initialDelaySeconds: 5
+  #   periodSeconds: 5
+
+volumes: {}
+#   path: /usr/src/app/data
+#   storage: 1Gi
+#   storageClassName: standard-rwo-retain
+
+extraVolumes: {}
+#   - path: /usr/src/app/public/uploads
+#     storage: 1Gi
+#     storageClassName: standard-rwo-retain
+
+affinity: {}
+#   key: pool
+#   value: b
+
+autoscaling:
+  # minReplicas: 1
+  # maxReplicas: 6
+  # targetCPUUtilizationPercentage: 70
+
+ingress:
+  enabled: false
+  # tls:
+  #   enabled: false
+  # host: "example.xyz"
