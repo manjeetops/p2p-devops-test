@@ -79,6 +79,6 @@ Please refer to this [README.md](docs/initial-setup.md) for details related to i
 - Support HTTPS in endpoints
 - Setup multiple replicas of Backend application in different nodes/zones for HA
 - Support to add CI/CD for IaC (Terraform Cloud)
-- Support for easier setup for Infrastructure related tools/services (ArgoCD, ExternalSecret, etc) 
+- Support for easier setup for Infrastructure related tools/services (ArgoCD, etc) 
 - Support to add user groups/roles in auth configmap (for easier onboarding of members to EKS)
 - Integrate WAF 
