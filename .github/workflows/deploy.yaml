@@ -9,7 +9,7 @@ on:
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
 
 jobs:
   build-and-push:
@@ -47,7 +47,7 @@ jobs:
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git add apps/go-app/values.yaml
+        git add .
         git commit -m "Update image tag to $IMAGE_TAG"
         git push
       env:
