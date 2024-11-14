@@ -1,0 +1,29 @@
+appName: "go"
+destNamespace: "go-app"
+destServer: "https://kubernetes.default.svc" #cluster 
+srcPath: "infra/helm-charts/base-chart" #juno-node charts
+srcRepoURL: "https://github.com/manjeetops/p2p-devops-test.git"
+srcTargetRevision: "master" #version
+appValues: |
+  ### Basic
+  nameOverride: sample-name
+  namespace: sample-namespace
+
+  image:
+    repository: <ecr-repo>
+    tag: <image-tag>
+    
+  resources:
+    requests:
+      memory: 250Mi
+      cpu: 200m
+    limits:
+      memory: 500Mi
+      cpu: 500m
+
+  ingress:
+    enabled: false
+
+
+
+
